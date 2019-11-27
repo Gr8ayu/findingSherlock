@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>LEVEL 1</title>
+{% load static %}
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static "css/default.css" %}" rel="stylesheet" type="text/css" />
+<script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  
+
+
+$(document).ready(function(){
+  $("#submitData").click(function(){
+    username = $("#username").val();
+    password = $("#password").val()
+
+    if (password == "049DCA6B1BA0235FAC48A2B596E1804C" && username != ""  ){
+
+      
+      $.ajax({
+         url: '/levels/1/',
+         data: {'username': username, 'password':password},
+         type: 'POST'
+       }).done(function(response){
+         console.log(response);
+         alert("correct");
+      
+       });
+     
+
+
+
+      // $("div").load("level1.html");
+      // window.open("../2","_self")
+    }
+
+    else {
+
+       alert("wrong");
+    }
+
+  });
+});
+</script>
+
+
+
+
+
+</head>
+<body>
+
+<div id="menu">
+  <ul>
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="{%url 'leaderboard'%}">Leaderboard</a></li>
+    <li><a href="{%url 'submissions'%}">Submissions</a></li>
+    <!-- <li><a href="#">Galleries</a></li> -->
+    <!-- <li><a href="#">Forums</a></li> -->
+    <!-- <li><a href="#">Contact</a></li> -->
+  </ul>
+</div>
+<div id="header">
+  <div id="logo">
+    <h1><a href="#">RELAY HACK</a></h1>
+    <h2><a href="#">LEVEL 1</a></h2>
+  </div>
+</div>
+<div id="page">
+  <div id="content">
+    <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #999999;">
+      <h1 class="title">Welcome to 8th Mile!</h1>
+
+      <p>Little knowledge of web development is all you need...</p>
+
+      <p>Enter the password to continue to next level : </p>
+<!--       <form>
+          <label>User :</label>
+          <input type="textbox" name="username" id="username">
+          <br><br>
+          <label>password :</label>
+          <input type="textbox" name="password" id="password">
+          <br><br>
+          <input type="button" name="submit" id="submitData" value="Submit">
+
+
+      </form>
+ -->
+    <p style="color: red">{{error_message}}</p>
+      <form action="{%url 'level1'%}" method="post">
+    
+    {% csrf_token %}
+    {{ form }}
+          
+    <input type="submit" value="Submit">
+</form>
+
+
+    </div>
+    <div>&nbsp;</div>
+    <div class="twocols">
+      <div class="col1">
+        <h3 class="title">8th mile events</h3>
+        <a href="{%url 'level1'%}">LEVEL 1</a><br>
+        <a href="{%url 'level2'%}">LEVEL 2</a><br>
+        <a href="{%url 'level2'%}">LEVEL 3</a><br>
+        <a href="{%url 'level2'%}">LEVEL 4</a><br>
+        <a href="{%url 'level2'%}">LEVEL 5</a><br>
+        <a href="{%url 'level2'%}">LEVEL 6</a><br>
+        <a href="{%url 'level2'%}">LEVEL 7</a><br>
+        <a href="{%url 'level2'%}">LEVEL 8</a><br>
+        <a href="{%url 'level2'%}">LEVEL 9</a><br>
+        <a href="{%url 'level2'%}">LEVEL 10</a><br>
+
+        <p><a href="#">Read more&hellip;</a></p>
+      </div>
+      <div class="col2">
+        <h3 class="title">8th mile events</h3>
+        <ul class="list">
+          <li><a href="#">C0D3 WAr5</a></li>
+          <li><a href="#">Relay Hack</a></li>
+          <li><a href="#">CTFs</a></li>
+          <li><a href="#">Blind coding</a></li>
+          <li><a href="#">hsfkjh</a></li>
+          <li><a href="#">Vestibulum luctus dui</a></li>
+          <li><a href="#">Ut elit vitae augue</a></li>
+          <li><a href="#">Sed sagittis leo vehicula</a></li>
+          <li><a href="#">Ut elit vitae augue</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="search" class="boxed">
+      <h2 class="title">Quick Search</h2>
+      <div class="content">
+        <form id="searchform" method="get" action="http://google.com/">
+          <fieldset>
+          <input id="searchinput" type="text" name="searchinput" value="" />
+          <input id="searchsubmit" type="submit" value="Search" />
+          </fieldset>
+        </form>
+        <p><a href="www.google.com/">Advanced Search</a></p>
+      </div>
+    </div>
+    <div id="news" class="boxed">
+      <h2 class="title">News &amp; Events</h2>
+      <div class="content">
+        <ul>
+          <li class="first">
+            <h3>04 July 2007</h3>
+            <p><a href="#">Coding Club rvce organised All india Police hackathon</a></p>
+          </li>
+          <li>
+            <h3>29 June 2007</h3>
+            <p><a href="#">Coding club's recruitment drive ends on 26 August 2019 </a></p>
+          </li>
+          <li>
+            <h3>13 June 2007</h3>
+            <p><a href="#">Last day to register for E summit ends today</a></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="extra" class="boxed">
+      <h2 class="title">USeful Links</h2>
+      <div class="content">
+        <ul class="list">
+          <li class="first"><a href="#">Ut semper vestibulum est</a></li>
+          <li><a href="#">Metaexploit</a></li>
+          <li><a href="#">Nmap</a></li>
+          <li><a href="#">John The ripper</a></li>
+          <li><a href="#">CSRF</a></li>
+          <li><a href="#">KAli Linux</a></li>
+          <li><a href="#">SSH</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="clear: both;">&nbsp;</div>
+</div>
+<div id="footer">
+  <p id="legal">&copy;2020 Relay Hack, 8th mile, Coding Club RVCE . All Rights Reserved<br />
+
+  <p id="links"><a href="#">Privacy</a> | <a href="#">Terms</a> | <a target="_blank" href="http://validator.w3.org/check/referer"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
+</div>
+</body>
+</html>

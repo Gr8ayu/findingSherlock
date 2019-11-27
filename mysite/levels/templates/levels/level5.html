@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>LEVEL 5</title>
+{% load static %}
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static "css/default.css" %}" rel="stylesheet" type="text/css" />
+<script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  
+
+
+$(document).ready(function(){
+  $("#submitData").click(function(){
+    username = $("#username").val();
+    password = $("#password").val()
+
+    if (password == "049DCA6B1BA0235FAC48A2B596E1804C" && username != ""  ){
+
+      alert("correct");
+      // $("div").load("level1.html");
+      window.open("../2","_self")
+    }
+
+    else {
+
+       alert("wrong");
+    }
+
+  });
+});
+</script>
+
+
+
+
+
+</head>
+<body>
+<div id="menu">
+  <ul>
+    <li class="active"><a href="http://all-free-download.com/free-website-templates/">Home</a></li>
+    <li><a href="http://all-free-download.com/free-website-templates/">Leaderboard</a></li>
+    <!-- <li><a href="http://all-free-download.com/free-website-templates/">Events</a></li> -->
+    <!-- <li><a href="http://all-free-download.com/free-website-templates/">Galleries</a></li> -->
+    <!-- <li><a href="http://all-free-download.com/free-website-templates/">Forums</a></li> -->
+    <!-- <li><a href="http://all-free-download.com/free-website-templates/">Contact</a></li> -->
+  </ul>
+</div>
+<div id="header">
+  <div id="logo">
+    <h1><a href="http://all-free-download.com/free-website-templates/">RELAY HACK</a></h1>
+    <h2><a href="http://all-free-download.com/free-website-templates/">LEVEL 1</a></h2>
+  </div>
+</div>
+<div id="page">
+  <div id="content">
+    <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #999999;">
+      <h1 class="title">Welcome to 8th Mile!</h1>
+      <p>Enter the password to continue to next level : </p>
+      <form>
+          <label>User :</label>
+          <input type="textbox" name="username" id="username">
+          <br><br>
+          <label>password :</label>
+          <input type="textbox" name="password" id="password">
+          <br><br>
+          <!-- <label>Submit</label> -->
+          <input type="button" name="submit" id="submitData" value="Submit">
+
+
+      </form>
+
+
+    </div>
+    <div>&nbsp;</div>
+    <div class="twocols">
+      <div class="col1">
+        <h3 class="title">8th mile events</h3>
+        <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum. Quisque dictum integer nisl risus, sagittis convallis, rutrum id, congue, and nibh.</p>
+        <p><a href="http://all-free-download.com/free-website-templates/">Read more&hellip;</a></p>
+      </div>
+      <div class="col2">
+        <h3 class="title">8th mile events</h3>
+        <ul class="list">
+          <li><a href="http://all-free-download.com/free-website-templates/">C0D3 WAr5</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Relay Hack</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">CTFs</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Blind coding</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">hsfkjh</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Vestibulum luctus dui</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Ut elit vitae augue</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Sed sagittis leo vehicula</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Ut elit vitae augue</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="search" class="boxed">
+      <h2 class="title">Quick Search</h2>
+      <div class="content">
+        <form id="searchform" method="get" action="http://google.com/">
+          <fieldset>
+          <input id="searchinput" type="text" name="searchinput" value="" />
+          <input id="searchsubmit" type="submit" value="Search" />
+          </fieldset>
+        </form>
+        <p><a href="www.google.com/">Advanced Search</a></p>
+      </div>
+    </div>
+    <div id="news" class="boxed">
+      <h2 class="title">News &amp; Events</h2>
+      <div class="content">
+        <ul>
+          <li class="first">
+            <h3>04 July 2007</h3>
+            <p><a href="http://all-free-download.com/free-website-templates/">Coding Club rvce organised All india Police hackathon</a></p>
+          </li>
+          <li>
+            <h3>29 June 2007</h3>
+            <p><a href="http://all-free-download.com/free-website-templates/">Coding club's recruitment drive ends on 26 August 2019 </a></p>
+          </li>
+          <li>
+            <h3>13 June 2007</h3>
+            <p><a href="http://all-free-download.com/free-website-templates/">Last day to register for E summit ends today</a></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="extra" class="boxed">
+      <h2 class="title">USeful Links</h2>
+      <div class="content">
+        <ul class="list">
+          <li class="first"><a href="http://all-free-download.com/free-website-templates/">Ut semper vestibulum est</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Metaexploit</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Nmap</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">John The ripper</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">CSRF</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">KAli Linux</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">SSH</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="clear: both;">&nbsp;</div>
+</div>
+<div id="footer">
+  <p id="legal">&copy;2020 Relay Hack, 8th mile, Coding Club RVCE . All Rights Reserved<br />
+
+  <p id="links"><a href="http://all-free-download.com/free-website-templates/">Privacy</a> | <a href="http://all-free-download.com/free-website-templates/">Terms</a> | <a target="_blank" href="http://validator.w3.org/check/referer"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
+</div>
+</body>
+</html>
