@@ -1,29 +1,180 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>LeaderBoard</title>
+<title>LEVEL 1</title>
+{% load static %}
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static "css/default.css" %}" rel="stylesheet" type="text/css" />
+<script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500');
+
+  /*  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+*/
+    #page {
+      /* center the table horizontally */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    table {
+      background: #09161E;
+      color: #fff;
+      font-family: 'Rubik', sans-serif;
+      /* position relative to include a band on the left of the container */
+      margin: 0rem 1rem;
+      position: relative;
+      /* cap the width of the table, allowing for a sizeable portion of white space if allowed by the viewport */
+      width: calc(90vw - 2rem);
+      max-width: 800px;
+      /* spacing to separate the table rows vertically */
+      border-spacing: 0 1rem;
+    }
+
+    /* with a pseudo element add a band with a repeating linear gradient */
+
+    table:before {
+      position: absolute;
+      content: '';
+      right: calc(100% + 1rem);
+      top: 0;
+      height: 100%;
+      width: 1.5rem;
+      border-radius: 5px;
+      border: 1px solid #38383F;
+      background: repeating-linear-gradient(-45deg, #15151E 0px, #15151E 4px, #38383F 4px, #38383F 8px);
+    }
+
+    /* center every element nested in a table row */
+
+    table tr>* {
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    /* align every second item of each row to the left */
+
+    table tr>*:nth-child(2) {
+      text-align: left;
+    }
+
+
+    /* style the headings to have thin uppercase titles for the columns */
+
+    table th {
+      font-weight: 300;
+      letter-spacing: 0.04rem;
+      font-size: 0.9rem;
+      color: #eee;
+      text-transform: uppercase;
+    }
+
+    /* slightly increase the weight of the cell describing the position */
+
+    table td.position {
+      font-weight: 500;
+    }
+
+    /* style the cell with the user visually separating the first, last name and team */
+
+    table td.user {
+      padding-left: 1rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.05rem;
+    }
+
+    table td.user strong {
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    table td.user span {
+      text-transform: capitalize;
+      margin-left: 0.75rem;
+      font-size: 0.8rem;
+      color: #999;
+      letter-spacing: initial;
+    }
+
+    /* style the span nested in the last cell to have the score in a rounded rectangle */
+
+    table td.score span {
+      background: #38383F;
+      border-radius: 30px;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    /* on smaller viewports remove the third column from sight */
+
+    @media (max-width: 500px) {
+      table tr>*:nth-child(3) {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<a href="{%url 'leaderboard'%}">leaderboard</a>
-<a href="{%url 'submissions'%}">leaderboard</a>
-<a href="{%url 'level1'%}">levels</a>
-
-
-{% for user in users%}
-<br>
-<div class="" style="width: 100%; height: 30px; border: 2px solid black; display: inline-flex;">
-	
-	<div style="margin-right: 30px">{{user.userID}}</div>
-	<div style="margin-right: 30px">{{user.username}}</div>
-	<div style="margin-right: 30px">{{user.score}}</div>
-
-
-
+<div id="menu">
+  <ul>
+    <li ><a href="{%url 'level1'%}">Home</a></li>
+    <li class="active"><a href="{%url 'leaderboard'%}">Leaderboard</a></li>
+    <li><a href="{%url 'submissions'%}">Submissions</a></li>
+    <li><a href="#">Levels</a></li>
+    <li><a href="#">Coding Club</a></li>
+    <li><a href="#">8th mile</a></li>
+  </ul>
 </div>
 
+<div id="page">
+     <table>
+      <tbody>
+        <tr>
+          <th>
+            
+          </th>
+          <th>
+            Username
+          </th>
+          <th>
+            Score
+          </th>
+        </tr>
+      </tbody>
 
-{%endfor%}
 
+      {% for user in users%}
+        <br>
+        <tr class="user">
+          <td class="position">{{loop.index}}</td>
+          <td class="user" style="border-left: 4px solid rgb(0, 210, 190);"> {{user.username}}</td>
+          <td class="score"><span>{{user.score}}</span></td>
+      </tr>
+
+        </div>
+
+
+    {%endfor%}
+
+
+      
+    </table>
+  <div style="clear: both;">&nbsp;</div>
+</div>
+<div id="footer">
+  <p id="legal">&copy;2020 Relay Hack, 8th mile, Coding Club RVCE.  All Rights Reserved<br />
+  Created by <a href="https://www.github.com/Gr8ayu">Gr8ayu</a>
+
+  <p id="links"><a href="#">Privacy</a> | <a href="#">Terms</a> | <a target="_blank" href="http://validator.w3.org/check/referer"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
+</div>
 </body>
 </html>

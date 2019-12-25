@@ -16,8 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path
+import levels
 
 urlpatterns = [
+	path('', include('levels.urls')),
     path('levels/', include('levels.urls')),
+    
     path('admin/', admin.site.urls),
 ]

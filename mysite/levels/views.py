@@ -12,6 +12,18 @@ def validate(password,level):
 			return True
 	return False
 
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+def message(request):
+    # return render(request, 'levels/message.html')
+    return render(request, 'levels/index.html')
+
 """
 def level1(request):
 	if request.method == "POST":
@@ -103,6 +115,7 @@ def level3(request):
 
 		if values == True:
 			form = submissionForm()
+
 			return HttpResponseRedirect("/levels/4/") 
 
 		else:
@@ -111,7 +124,9 @@ def level3(request):
 	else:
 		form = submissionForm()
 		error = ""
-		return render(request, 'levels/level3.html',{'form': form, 'error_message':error})
+		response = render(request, 'levels/level3.html',{'form': form, 'error_message':error})
+		response.set_cookie('IX', "4E39654C93E39DCEAD499692F99F7A1C") 
+		return response
 
 
 
@@ -154,6 +169,96 @@ def level5(request):
 
 
 
+def level6(request):
+	if request.method == "POST":
+		values = submit(request,6)
+		form = submissionForm(request.POST)
+
+		if values == True:
+			form = submissionForm()
+			return HttpResponseRedirect("/levels/7/") 
+
+		else:
+			return render(request, 'levels/level6.html',values)
+	
+	else:
+		form = submissionForm()
+		error = ""
+		return render(request, 'levels/level6.html',{'form': form, 'error_message':error})
+
+
+def level7(request):
+	if request.method == "POST":
+		values = submit(request,7)
+		form = submissionForm(request.POST)
+
+		if values == True:
+			form = submissionForm()
+			return HttpResponseRedirect("/levels/8/") 
+
+		else:
+			return render(request, 'levels/level7.html',values)
+	
+	else:
+		form = submissionForm()
+		error = ""
+		return render(request, 'levels/level7.html',{'form': form, 'error_message':error})
+
+
+def level8(request):
+	if request.method == "POST":
+		values = submit(request,7)
+		form = submissionForm(request.POST)
+
+		if values == True:
+			form = submissionForm()
+			return HttpResponseRedirect("/levels/8/") 
+
+		else:
+			return render(request, 'levels/level7.html',values)
+	
+	else:
+		form = submissionForm()
+		error = ""
+		return render(request, 'levels/level7.html',{'form': form, 'error_message':error})
+
+
+def level9(request):
+	if request.method == "POST":
+		values = submit(request,9)
+		form = submissionForm(request.POST)
+
+		if values == True:
+			form = submissionForm()
+			return HttpResponseRedirect("/levels/10/") 
+
+		else:
+			return render(request, 'levels/level9.html',values)
+	
+	else:
+		form = submissionForm()
+		error = ""
+		return render(request, 'levels/level9.html',{'form': form, 'error_message':error})
+
+
+def level10(request):
+	if request.method == "POST":
+		values = submit(request,7)
+		form = submissionForm(request.POST)
+
+		if values == True:
+			form = submissionForm()
+			return HttpResponseRedirect("/levels/8/") 
+
+		else:
+			return render(request, 'levels/level7.html',values)
+	
+	else:
+		form = submissionForm()
+		error = ""
+		return render(request, 'levels/level7.html',{'form': form, 'error_message':error})
+
+
 
 
 
@@ -175,6 +280,7 @@ def submit(request, level):
 
 		if form.is_valid():
 			obj = Submissions()
+			client_ip = get_client_ip(request)
 
 			try:
 				userdata = User.objects.get(userKey= form.cleaned_data['username'])
@@ -196,7 +302,8 @@ def submit(request, level):
 						return {'form': form, 'error_message':error}
 						# return HttpResponseRedirect(request, 'levels/level1.html',{'form': form, 'error_message':error})
 				
-				obj.key = form.cleaned_data['key']
+				obj.ip = client_ip
+				obj.key = form.cleaned_data['key'].upper()
 				obj.userID = userdata
 				obj.date_time = timezone.now()
 				obj.validity = validate(obj.key, obj.level)
@@ -211,6 +318,7 @@ def submit(request, level):
 					# return HttpResponseRedirect('/levels/submissions/')
 
 				else :
+					obj.save()
 					error = "entered key is Wrong"
 					return {'form': form, 'error_message':error}
 					# return render(request, 'levels/level1.html',{'form': form, 'error_message':error})

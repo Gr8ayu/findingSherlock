@@ -1,0 +1,140 @@
+
+		{% extends "levels/message.html" %}
+
+		{%block page-fold-pre%}
+        {% load static %}
+   <!--      <meta name="description" content="PFold: Paper-Like Unfolding Effect" />
+        <meta name="keywords" content="css3, experiment, 3d, unfolding, fold, paper, component, element, web design, jquery, plugin, perspective" />
+        <meta name="author" content="Codrops" /> -->
+        <link rel="shortcut icon" href="{% static "images/favicon2.png" %}"> 
+        <link rel="stylesheet" type="text/css" href="{% static "css/demo.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "css/pfold.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "css/custom1.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "css/form.css" %}">
+		 
+		<!--[if lte IE 8]><style>.support-note .note-ie{display:block;}</style><![endif]-->
+		<style>
+
+			@font-face {
+    font-family: "Satisfy";
+    src: url("{% static "font/Satisfy.ttf" %}");
+}
+
+
+			body { background: #98867E; }
+			.container > header h1 {
+			    color: #ff0;
+			    text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+			}
+
+			.container > header h2,
+			p.info  {
+			    color: #4e2f1d;
+			    text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+			}
+		</style>
+
+
+    {%endblock%}
+
+    {%block page-fold%}
+        <div class="container-page">
+
+
+			<section class="main-letter demo-1">
+			
+				<div id="uc-container" class="uc-container">
+
+					<div class="uc-initial-content">
+					
+						<!-- custom content -->
+						<span class="clickme">Jhon Watson</span>
+						
+					</div>
+
+					<div class="uc-final-content">
+						<!-- custom content -->
+						<div class="scrollwrap letter-content" style="color: #224092">
+							<h3>Dear Friend,</h3>
+							<p>Sherlock Holmes is missing. Jim Moriarity is back and he got sherlock. He challenged me to solve his riddle to free Sherlock. I need your help to figure out a way to bring our friend home.herlock Holmes is missing. Jim Moriarity is back and he got sherlock. He challenged me to solve his riddle to free Sherlock. I need your help to figure out a way to bring our friend home. 
+
+							</p><p class="signature"><big>Yours, John Watson</big></p>
+						</div>
+						<span class="close">x</span>
+					</div>
+					
+				</div>
+				<p class="info"><strong><center>John Watson's message</center> </strong></p>
+			</section>
+			
+		</div>
+		
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="{% static "js/modernizr.custom.79639.js" %}"></script>
+		<script type="text/javascript" src="{% static "js/jquery.pfold.js" %}"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				var $container = $( '#uc-container' ),
+					pfold = $( '#uc-container' ).pfold({
+						easing : 'ease-in-out',
+						folds : 3,
+						folddirection : ['left','bottom','right']
+					});
+
+				$container.find( 'span.clickme' ).on( 'click', function() {
+
+					pfold.unfold();
+
+				} ).end().find( 'span.close' ).on( 'click', function() {
+
+					pfold.fold();
+
+				} );
+				
+			});
+		</script>
+    {%endblock%}
+{%block register-form%}
+<div class="container-contact100">
+
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					<!-- Send Us A Message -->
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Please enter your name">
+					<input class="input100" type="text" name="name" placeholder="Full Name">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Please enter your email: e@a.x">
+					<input class="input100" type="text" name="email" placeholder="E-mail">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Please enter your phone">
+					<input class="input100" type="text" name="phone" placeholder="Phone">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Please enter your college">
+					<input class="input100" name="message" placeholder="Your college"></input>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						<span>
+							
+							Register
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+{%endblock%}

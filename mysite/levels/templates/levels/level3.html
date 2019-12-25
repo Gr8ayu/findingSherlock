@@ -9,45 +9,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<script type="text/javascript">
-  
-
-
-$(document).ready(function(){
-  $("#submitData").click(function(){
-    username = $("#username").val();
-    password = $("#password").val()
-// TODO
-    if (password == "049DCA6B1BA0235FAC48A2B596E1804C" && username != ""  ){
-
-      
-      $.ajax({
-        // TODO
-         url: '/levels/1/',
-         data: {'username': username, 'password':password},
-         type: 'POST'
-       }).done(function(response){
-         console.log(response);
-         alert("correct");
-      
-       });
-     
-
-
-
-      // $("div").load("level1.html");
-      // window.open("../2","_self")
-    }
-
-    else {
-
-       alert("wrong");
-    }
-
-  });
-});
-</script>
-
 
 
 
@@ -55,15 +16,15 @@ $(document).ready(function(){
 </head>
 <body>
 
-<div id="menu">
-  <ul>
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="{%url 'leaderboard'%}">Leaderboard</a></li>
-    <li><a href="{%url 'submissions'%}">Submissions</a></li>
-    <!-- <li><a href="#">Galleries</a></li> -->
-    <!-- <li><a href="#">Forums</a></li> -->
-    <!-- <li><a href="#">Contact</a></li> -->
-  </ul>
+<div id="menu"> 
+  <ul>  
+    <li class="active"><a href="{%url 'level1'%}">Home</a></li> 
+    <li><a href="{%url 'leaderboard'%}">Leaderboard</a></li>  
+    <li><a href="{%url 'submissions'%}">Submissions</a></li>  
+    <li><a href="#">Levels</a></li> 
+    <li><a href="#">Coding Club</a></li>  
+    <li><a href="#">8th mile</a></li> 
+  </ul> 
 </div>
 <div id="header">
   <div id="logo">
@@ -77,22 +38,14 @@ $(document).ready(function(){
     <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #999999;">
       <h1 class="title">Welcome to 8th Mile!</h1>
 
+      <audio  controls autoplay>  
+               <source src="{% static "audio/sherlock_holmes_theme_3.mp3" %}" type="audio/mpeg">  
+           </audio> 
       <!-- TODO -->
-      <p><a href="https://cdn4.iconfinder.com/data/icons/emoji-37/512/feeling-Emoji-face-emoticon-emotion-33-512.png" target="_blank">Digest me...</a></p>
+      <p><a href="{% static "images/digestme.gif" %}" target="_blank">Digest me...</a></p>
 
       <p>Enter the password to continue to next level : </p>
-<!--       <form>
-          <label>User :</label>
-          <input type="textbox" name="username" id="username">
-          <br><br>
-          <label>password :</label>
-          <input type="textbox" name="password" id="password">
-          <br><br>
-          <input type="button" name="submit" id="submitData" value="Submit">
 
-
-      </form>
- -->
     <p style="color: red">{{error_message}}</p>
     <!-- TODO -->
       <form action="{%url 'level3'%}" method="post">
@@ -141,15 +94,15 @@ $(document).ready(function(){
   <div id="sidebar">
     <div id="search" class="boxed">
       <h2 class="title">Quick Search</h2>
-      <div class="content">
-        <form id="searchform" method="get" action="http://google.com/">
-          <fieldset>
-          <input id="searchinput" type="text" name="searchinput" value="" />
-          <input id="searchsubmit" type="submit" value="Search" />
-          </fieldset>
-        </form>
-        <p><a href="www.google.com/">Advanced Search</a></p>
-      </div>
+      <div class="content"> 
+        <form id="searchform" method="get" action="http://google.com/search"> 
+          <fieldset>  
+          <input id="searchinput" type="text" name="q" value="" />  
+          <input id="searchsubmit" type="submit" value="Search" />  
+          </fieldset> 
+        </form> 
+        <p><a href="https://www.google.com/" action="_blank">Advanced Search</a></p>  
+      </div>  
     </div>
     <div id="news" class="boxed">
       <h2 class="title">News &amp; Events</h2>
@@ -189,7 +142,7 @@ $(document).ready(function(){
 </div>
 <div id="footer">
   <p id="legal">&copy;2020 Relay Hack, 8th mile, Coding Club RVCE . All Rights Reserved<br />
-
+    Created by <a href="https://www.github.com/Gr8ayu">Gr8ayu</a>
   <p id="links"><a href="#">Privacy</a> | <a href="#">Terms</a> | <a target="_blank" href="http://validator.w3.org/check/referer"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
 </div>
 </body>

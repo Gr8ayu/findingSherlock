@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LeaderBoard</title>
+</head>
+<body>
+
+<a href="{%url 'leaderboard'%}">leader</a>
+
+
+
+
+{% for submission in submissionList%}
+<br>
+
+{% if submission.validity %}
+	<div style="background: green">
+		{{submission.date_time}}---{{submission.SubmissionId}}---{{submission.userID}}---{{submission.level}}---{{submission.key}}	
+	</div>
+
+{% endif%}
+{% if not submission.validity %}
+	<div style="background: red">
+		{{submission.date_time}}---{{submission.SubmissionId}}---{{submission.userID}}---{{submission.level}}---{{submission.key}}	
+	</div>
+
+{% endif%}
+
+
+
+{%endfor%}
+
+</body>
+</html>
+	
