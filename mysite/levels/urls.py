@@ -20,7 +20,9 @@ urlpatterns = [
     # TODO
     path('9/', views.level9, name='level9'),
     # TODO
-    path('10/', views.level2, name='level10'),
+    path('10/', views.level10, name='level10'),
+
+    path('11/', views.level11, name='level11'),
 
     # path('submit/',views.submit, name='submit'),
     path('leaderboard/', views.leaderboard, name='leaderboard'),

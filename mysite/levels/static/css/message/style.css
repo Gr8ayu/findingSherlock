@@ -152,6 +152,7 @@ h2.story {
 
 .storyemptyblock {
 	height: 196px;
+	border: 0px solid black;
 }
 
 h2.photos {
@@ -198,7 +199,7 @@ h4.blankstory {
 	margin-left: 50%;
 	width: 50%;
 	padding-top: 0;
-	border-left: 1px solid #333;
+	border: 0px solid #f00;
 }
 
 h4.photos {
@@ -696,6 +697,15 @@ h3.title {
 	padding: 60px 0 100px;
 }
 
+.owl-carousel .item p{
+	background:red ; 
+	background-size:cover;      
+	border:1px solid red;
+	height: 150px;
+	width: 150px;
+}
+
+
 .controls .fa {
 	color: #A5ABB5;
 	font-size: 25px;
@@ -1153,6 +1163,7 @@ a#go-top {
         
         .storyemptyblock {
     height: 170px;
+    border-color: transparent;
 }
 
 

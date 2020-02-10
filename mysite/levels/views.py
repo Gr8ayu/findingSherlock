@@ -24,55 +24,6 @@ def message(request):
     # return render(request, 'levels/message.html')
     return render(request, 'levels/index.html')
 
-"""
-def level1(request):
-	if request.method == "POST":
-		
-		form = submissionForm(request.POST)
-
-		if form.is_valid():
-			obj = Submissions()
-
-			try:
-				userdata = User.objects.get(userKey= form.cleaned_data['username'])
-				
-				obj.key = form.cleaned_data['key']
-				obj.level = form.cleaned_data['level']
-				obj.userID = userdata
-				obj.date_time = timezone.now()
-				obj.validity = validate(obj.key)
-				
-				if obj.validity:
-					userdata.score += 1
-					userdata.save()
-					obj.save()
-					return render(request, 'levels/level2.html')
-
-				else:
-					userdata.save()
-					obj.save()
-					error = "Wrong Key"
-					return render(request, 'levels/level1.html',{'form': form, 'error_message':error})
-				
-				# TODO USE redirect here
-				
-			except User.DoesNotExist:
-				
-				# raise e
-				error = "User not found"
-				return render(request, 'levels/level1.html',{'form': form, 'error_message':error})
-				# form = submissionForm()
-		else:
-			error = "Invalid Input"
-
-			return render(request, 'levels/level1.html',{'form': form, 'error_message':error})
-				
-
-	
-	form = submissionForm()
-	error = ""
-	return render(request, 'levels/level1.html',{'form': form, 'error_message':error})
-"""
 def level1(request):
 	if request.method == "POST":
 		values = submit(request,1)
@@ -212,15 +163,15 @@ def level8(request):
 
 		if values == True:
 			form = submissionForm()
-			return HttpResponseRedirect("/levels/8/") 
+			return HttpResponseRedirect("/levels/9/") 
 
 		else:
-			return render(request, 'levels/level7.html',values)
+			return render(request, 'levels/level8.html',values)
 	
 	else:
 		form = submissionForm()
 		error = ""
-		return render(request, 'levels/level7.html',{'form': form, 'error_message':error})
+		return render(request, 'levels/level8.html',{'form': form, 'error_message':error})
 
 
 def level9(request):
@@ -243,20 +194,38 @@ def level9(request):
 
 def level10(request):
 	if request.method == "POST":
-		values = submit(request,7)
+		values = submit(request,10)
 		form = submissionForm(request.POST)
 
 		if values == True:
 			form = submissionForm()
-			return HttpResponseRedirect("/levels/8/") 
+			return HttpResponseRedirect("/levels/11/") 
 
 		else:
-			return render(request, 'levels/level7.html',values)
+			return render(request, 'levels/level10.html',values)
 	
 	else:
 		form = submissionForm()
 		error = ""
-		return render(request, 'levels/level7.html',{'form': form, 'error_message':error})
+		return render(request, 'levels/level10.html',{'form': form, 'error_message':error})
+
+
+def level11(request):
+	if request.method == "POST":
+		values = submit(request,11)
+		form = submissionForm(request.POST)
+
+		if values == True:
+			form = submissionForm()
+			return HttpResponseRedirect("/levels/1/") 
+
+		else:
+			return render(request, 'levels/level11.html',values)
+	
+	else:
+		form = submissionForm()
+		error = ""
+		return render(request, 'levels/level11.html',{'form': form, 'error_message':error})
 
 
 

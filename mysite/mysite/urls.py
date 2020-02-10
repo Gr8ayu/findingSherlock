@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path
-import levels
+import levels.views
 
 urlpatterns = [
-	path('', include('levels.urls')),
+    path('', levels.views.message),
+    path('/', levels.views.message),
+    # path('', include('levels.urls')),
     path('levels/', include('levels.urls')),
     
     path('admin/', admin.site.urls),

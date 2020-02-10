@@ -6,7 +6,8 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link href="{% static "css/default.css" %}" rel="stylesheet" type="text/css" />
 <script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
-
+ <link rel="icon" href="{% static "images/favicon.jpg" %}">
+    <link rel="shortcut icon" href="{% static "images/favicon.png" %}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
@@ -16,15 +17,15 @@
 </head>
 <body>
 
-<div id="menu"> 
-  <ul>  
-    <li class="active"><a href="{%url 'level1'%}">Home</a></li> 
-    <li><a href="{%url 'leaderboard'%}">Leaderboard</a></li>  
-    <li><a href="{%url 'submissions'%}">Submissions</a></li>  
-    <li><a href="#">Levels</a></li> 
-    <li><a href="#">Coding Club</a></li>  
-    <li><a href="#">8th mile</a></li> 
-  </ul> 
+<div id="menu">
+  <ul>
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="{%url 'leaderboard'%}">Leaderboard</a></li>
+    <li><a href="{%url 'submissions'%}">Submissions</a></li>
+    <li><a href="{%url 'level1'%}">Challenges</a></li>
+    <li><a href="https://www.instagram.com/codingclubrvce">Coding Club</a></li>
+    <li><a href="http://8thmile.rvce.edu.in">8th mile</a></li>
+  </ul>
 </div>
 <div id="header">
   <div id="logo">
@@ -38,7 +39,7 @@
     <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #999999;">
       <h1 class="title">Welcome to 8th Mile!</h1>
 
-      <audio  controls autoplay>  
+      <audio  controls autoplay loop>  
                <source src="{% static "audio/sherlock_holmes_theme_3.mp3" %}" type="audio/mpeg">  
            </audio> 
       <!-- TODO -->

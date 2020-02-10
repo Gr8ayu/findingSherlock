@@ -7,7 +7,8 @@
 <link href="{% static "css/default.css" %}" rel="stylesheet" type="text/css" />
 <script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+ <link rel="icon" href="{% static "images/favicon.jpg" %}">
+    <link rel="shortcut icon" href="{% static "images/favicon.png" %}">
   <style>
     @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500');
 
@@ -126,12 +127,12 @@
 
 <div id="menu">
   <ul>
-    <li ><a href="{%url 'level1'%}">Home</a></li>
-    <li class="active"><a href="{%url 'leaderboard'%}">Leaderboard</a></li>
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="{%url 'leaderboard'%}">Leaderboard</a></li>
     <li><a href="{%url 'submissions'%}">Submissions</a></li>
-    <li><a href="#">Levels</a></li>
-    <li><a href="#">Coding Club</a></li>
-    <li><a href="#">8th mile</a></li>
+    <li><a href="{%url 'level1'%}">Challenges</a></li>
+    <li><a href="https://www.instagram.com/codingclubrvce">Coding Club</a></li>
+    <li><a href="http://8thmile.rvce.edu.in">8th mile</a></li>
   </ul>
 </div>
 

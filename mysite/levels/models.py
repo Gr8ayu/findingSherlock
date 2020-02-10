@@ -23,6 +23,14 @@ class User(models.Model):
 	def __str__(self):
 		return self.username
 	
+class Clue(models.Model):
+    clueID = models.AutoField(primary_key=True)
+    level = models.IntegerField()
+    clue = models.TextField()
+    visible = models.BooleanField(default=False)
+
+    def __str__(self):
+        return str(self.level ) +" : " + self.clue[:30]
 
 
 class Submissions(models.Model):

@@ -3,15 +3,16 @@
 
 		{%block page-fold-pre%}
         {% load static %}
-   <!--      <meta name="description" content="PFold: Paper-Like Unfolding Effect" />
-        <meta name="keywords" content="css3, experiment, 3d, unfolding, fold, paper, component, element, web design, jquery, plugin, perspective" />
-        <meta name="author" content="Codrops" /> -->
+ 
         <link rel="shortcut icon" href="{% static "images/favicon2.png" %}"> 
         <link rel="stylesheet" type="text/css" href="{% static "css/demo.css" %}" />
         <link rel="stylesheet" type="text/css" href="{% static "css/pfold.css" %}" />
         <link rel="stylesheet" type="text/css" href="{% static "css/custom1.css" %}" />
         <link rel="stylesheet" type="text/css" href="{% static "css/form.css" %}">
-		 
+		 <script type="text/javascript" src="{% static "js/message/jquery-1.10.2.min.js"%}"></script>
+    
+		<script type="text/javascript" src="{% static "js/modernizr.custom.79639.js" %}"></script>
+		<script type="text/javascript" src="{% static "js/jquery.pfold.js" %}"></script>
 		<!--[if lte IE 8]><style>.support-note .note-ie{display:block;}</style><![endif]-->
 		<style>
 
@@ -43,36 +44,38 @@
 
 			<section class="main-letter demo-1">
 			
-				<div id="uc-container" class="uc-container">
+				<div id="uc-container" class="uc-container uc-current" style="perspective: 1200px; transition: all 1350ms linear 0s; left: 0px; top: 0px;">
 
-					<div class="uc-initial-content">
+					<div class="uc-initial"><div class="uc-initial-content">
 					
 						<!-- custom content -->
 						<span class="clickme">Jhon Watson</span>
 						
-					</div>
+					</div></div>
 
-					<div class="uc-final-content">
+					
+					
+				<div class="uc-final-wrapper" style="width: 600px; height: 300px; left: -150px; top: 0px;"><div class="uc-initial" style="display: none;"><div class="uc-initial-content">
+					
 						<!-- custom content -->
+						<span class="clickme">Jhon Watson</span>
+						
+					</div></div><div class="uc-final" style="display: block;"><div class="uc-final-content" style="width: 600px; height: 300px; display: block;">
+					f	<!-- custom content -->
 						<div class="scrollwrap letter-content" style="color: #224092">
 							<h3>Dear Friend,</h3>
 							<p>Sherlock Holmes is missing. Jim Moriarity is back and he got sherlock. He challenged me to solve his riddle to free Sherlock. I need your help to figure out a way to bring our friend home.herlock Holmes is missing. Jim Moriarity is back and he got sherlock. He challenged me to solve his riddle to free Sherlock. I need your help to figure out a way to bring our friend home. 
 
 							</p><p class="signature"><big>Yours, John Watson</big></p>
 						</div>
-						<span class="close">x</span>
-					</div>
-					
-				</div>
-				<p class="info"><strong><center>John Watson's message</center> </strong></p>
+						<!-- <span class="close">x</span> -->
+					</div></div></div></div>
+				<p class="info"><strong></strong></p><center><strong>John Watson's message</strong></center><strong> </strong><p></p>
 			</section>
 			
 		</div>
 		
 		
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-		<script type="text/javascript" src="{% static "js/modernizr.custom.79639.js" %}"></script>
-		<script type="text/javascript" src="{% static "js/jquery.pfold.js" %}"></script>
 		<script type="text/javascript">
 			$(function() {
 
@@ -100,28 +103,31 @@
 <div class="container-contact100">
 
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<script type="text/javascript">var submitted=false;</script>
+			<!-- <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="submitted&&(window.location="https://www.google.com")" style="display: none"> -->
+
+			<form class="contact100-form validate-form" action="https://docs.google.com/forms/d/e/1FAIpQLScXeCC9rzf8hSRrKfbZ8zvvAcIrme8EgP-Gye_pI8YN8hazdA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
 				<span class="contact100-form-title">
 					<!-- Send Us A Message -->
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Please enter your name">
-					<input class="input100" type="text" name="name" placeholder="Full Name">
+					<input class="input100" type="text"  name="entry.2005620554" placeholder="Full Name" required>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Please enter your email: e@a.x">
-					<input class="input100" type="text" name="email" placeholder="E-mail">
+					<input class="input100" type="email"  name="entry.1045781291" placeholder="E-mail" required>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Please enter your phone">
-					<input class="input100" type="text" name="phone" placeholder="Phone">
-					<span class="focus-input100"></span>
+					<input class="input100" type="tel"  name="entry.1490663742" placeholder="Phone" required>
+					<span class="focus-input100" pattern="[3456789][0-9]{9}" required></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Please enter your college">
-					<input class="input100" name="message" placeholder="Your college"></input>
+					<input class="input100"  name="entry.1333170355"  placeholder="Your college"></input>
 					<span class="focus-input100"></span>
 				</div>
 
