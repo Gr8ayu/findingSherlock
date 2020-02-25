@@ -57,18 +57,18 @@ $(document).ready(function(){
 
 <div id="menu">
   <ul>
-    <li class="active"><a href="/">Home</a></li>
+    <li ><a href="/">Home</a></li>
     <li><a href="{%url 'leaderboard'%}">Leaderboard</a></li>
     <li><a href="{%url 'submissions'%}">Submissions</a></li>
-    <li><a href="{%url 'level1'%}">Challenges</a></li>
+    <li  class="active"><a href="{%url 'level1'%}">Challenges</a></li>
     <li><a href="https://www.instagram.com/codingclubrvce">Coding Club</a></li>
     <li><a href="http://8thmile.rvce.edu.in">8th mile</a></li>
   </ul>
 </div>
 <div id="header">
   <div id="logo">
-    <h1><a href="#">RELAY HACK</a></h1>
-    <h2><a href="#">LEVEL 1</a></h2>
+    <h1><a href="#">Finding Sherlock</a></h1>
+    <h2><a href="#">LEVEL 9</a></h2>
   </div>
 </div>
 <div id="page">
@@ -76,11 +76,15 @@ $(document).ready(function(){
     <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #999999;">
       <h1 class="title">Welcome to 8th Mile!</h1>
 
-      
 
        <audio  controls autoplay loop>
           <source src="{% static "audio/sherlock_holmes_theme_1.mp3" %}" type="audio/mpeg">
       </audio> 
+
+      <p>
+              <a href="{% static "images/sherlock_meme.jpg" %}" target="_blank">Put the "Baker" in 221 Baker Street </a>
+
+      </p>
 
       <p>Enter the password to continue to next level : </p>
 <!--       <form>
@@ -107,34 +111,34 @@ $(document).ready(function(){
 
     </div>
     <div>&nbsp;</div>
-    <div class="twocols">
+        <div class="twocols">
       <div class="col1">
-        <h3 class="title">8th mile events</h3>
+        <h3 class="title">levels</h3>
         <a href="{%url 'level1'%}">LEVEL 1</a><br>
         <a href="{%url 'level2'%}">LEVEL 2</a><br>
-        <a href="{%url 'level2'%}">LEVEL 3</a><br>
-        <a href="{%url 'level2'%}">LEVEL 4</a><br>
-        <a href="{%url 'level2'%}">LEVEL 5</a><br>
-        <a href="{%url 'level2'%}">LEVEL 6</a><br>
-        <a href="{%url 'level2'%}">LEVEL 7</a><br>
-        <a href="{%url 'level2'%}">LEVEL 8</a><br>
-        <a href="{%url 'level2'%}">LEVEL 9</a><br>
-        <a href="{%url 'level2'%}">LEVEL 10</a><br>
+        <a href="{%url 'level3'%}">LEVEL 3</a><br>
+        <a href="{%url 'level4'%}">LEVEL 4</a><br>
+        <a href="{%url 'level5'%}">LEVEL 5</a><br>
+        <a href="{%url 'level6'%}">LEVEL 6</a><br>
+        <a href="{%url 'level7'%}">LEVEL 7</a><br>
+        <a href="{%url 'level8'%}">LEVEL 8</a><br>
+        <a href="{%url 'level9'%}">LEVEL 9</a><br>
+        <a href="{%url 'level10'%}">LEVEL 10</a><br>
+        <a href="{%url 'level11'%}">LEVEL 11</a><br>
 
-        <p><a href="#">Read more&hellip;</a></p>
+        <!-- <p><a href="#">Read more&hellip;</a></p> -->
       </div>
       <div class="col2">
         <h3 class="title">8th mile events</h3>
         <ul class="list">
-          <li><a href="#">C0D3 WAr5</a></li>
-          <li><a href="#">Relay Hack</a></li>
-          <li><a href="#">CTFs</a></li>
-          <li><a href="#">Blind coding</a></li>
-          <li><a href="#">hsfkjh</a></li>
-          <li><a href="#">Vestibulum luctus dui</a></li>
-          <li><a href="#">Ut elit vitae augue</a></li>
-          <li><a href="#">Sed sagittis leo vehicula</a></li>
-          <li><a href="#">Ut elit vitae augue</a></li>
+          <li><a href="http://8thmile.rvce.edu.in/tech.html">Hack 59</a></li>
+          <li><a href="http://8thmile.rvce.edu.in/tech.html">Business Marathon</a></li>
+          <li><a href="http://8thmile.rvce.edu.in/tech.html">Stock Market Comp.</a></li>
+          <li><a href="http://8thmile.rvce.edu.in/gaming.html">COD Mobile</a></li>
+          <li><a href="http://8thmile.rvce.edu.in/gaming.html">CS GO</a></li>
+          <li><a href="http://8thmile.rvce.edu.in/gaming.html">FIFA '20</a></li>
+          <li><a href="http://8thmile.rvce.edu.in/gaming.html">NFS</a></li>
+          <li><a href="http://8thmile.rvce.edu.in/dramatics.html">Mad Attack</a></li>
         </ul>
       </div>
     </div>
@@ -157,16 +161,16 @@ $(document).ready(function(){
       <div class="content">
         <ul>
           <li class="first">
-            <h3>04 July 2007</h3>
-            <p><a href="#">Coding Club rvce organised All india Police hackathon</a></p>
+            <h3>24 January 2020</h3>
+            <p><a href="#">Coding Club organised 8th mile pre event : The Amazing Race</a></p>
           </li>
           <li>
-            <h3>29 June 2007</h3>
-            <p><a href="#">Coding club's recruitment drive ends on 26 August 2019 </a></p>
+            <h3>16 November 2019</h3>
+            <p><a href="#">Coding Club rvce organised All india Police hackathon </a></p>
           </li>
           <li>
-            <h3>13 June 2007</h3>
-            <p><a href="#">Last day to register for E summit ends today</a></p>
+            <h3>18 October 2019</h3>
+            <p><a href="#">Coding Club's recruitment drive ends.</a></p>
           </li>
         </ul>
       </div>
@@ -175,17 +179,18 @@ $(document).ready(function(){
       <h2 class="title">USeful Links</h2>
       <div class="content">
         <ul class="list">
-          <li class="first"><a href="#">Ut semper vestibulum est</a></li>
-          <li><a href="#">Metaexploit</a></li>
-          <li><a href="#">Nmap</a></li>
-          <li><a href="#">John The ripper</a></li>
-          <li><a href="#">CSRF</a></li>
-          <li><a href="#">KAli Linux</a></li>
-          <li><a href="#">SSH</a></li>
+          <li class="first"><a href="https://en.wikipedia.org/wiki/Brute-force_attack">Brute Force Attack</a></li>
+          <li><a href="https://infosorce.com/how-to-use-inspect-element-to-hack-passwords/">Inspect element</a></li>
+          <li><a href="https://itsfoss.com/checksum-tools-guide-linux/">Hashing Tools</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage">Client Side Storage</a></li>
+          <li><a href="https://sciencing.com/convert-between-base-number-systems-8442032.html">Base Conversion</a></li>
+          <!-- <li><a href="#">KAli Linux</a></li> -->
+          <!-- <li><a href="#">SSH</a></li> -->
         </ul>
       </div>
     </div>
   </div>
+
   <div style="clear: both;">&nbsp;</div>
 </div>
 <div id="footer">

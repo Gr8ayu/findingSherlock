@@ -86,7 +86,7 @@ typewriter("Let's start with introduction. I am Gr8ayu, creator of this game. Te
 cout<<user2; cin>>input;
 while (getchar() != '\n');
 
-cout<<user1; typewriter("Interesting name, "); typewriter(input); typewriter(". What bring you to me ?\n"); 
+cout<<user1; typewriter("Interesting name, "); typewriter(input); typewriter(". What brings you to me ?\n"); 
 
 cout<<user2; scanf("%s",input);
 while (getchar() != '\n');
@@ -98,7 +98,7 @@ cout<<user1; typewriter("Aah, I see. That's what everyone wants. But I can't jus
 cout<<user2; scanf("%s",input);
 while (getchar() != '\n');
 
-cout<<user1; typewriter("Fine then. I can only show you the way. If you truly desire, you'll have to find it hard way. The key is stor...");
+cout<<user1; typewriter("Fine then. I can only show you the way. If you truly desire, you'll have to find it the hard way. The key is stor");
 // cout<<user1; typewriter(input);
 
 

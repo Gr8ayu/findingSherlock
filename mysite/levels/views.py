@@ -158,7 +158,7 @@ def level7(request):
 
 def level8(request):
 	if request.method == "POST":
-		values = submit(request,7)
+		values = submit(request,8)
 		form = submissionForm(request.POST)
 
 		if values == True:

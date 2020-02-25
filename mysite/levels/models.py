@@ -21,7 +21,7 @@ class User(models.Model):
 	userKey = models.CharField(max_length=50)
 	score = models.IntegerField(default=0)
 	def __str__(self):
-		return self.username
+		return self.username +" : " + self.userKey + " : [ " +str(self.score)+ " ] "
 	
 class Clue(models.Model):
     clueID = models.AutoField(primary_key=True)
@@ -68,7 +68,7 @@ class Submissions(models.Model):
     		self.validity = False
 
     def __str__(self):
-    	return "{}, level:{}, {}".format(self.SubmissionId, self.level,self.userID)
+    	return "{}, level:{}, {} , {}".format(self.SubmissionId, self.level,self.userID, self.key)
 
     class Meta:
         ordering = ["-date_time"]

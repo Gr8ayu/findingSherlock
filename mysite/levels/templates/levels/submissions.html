@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>LEVEL 1</title>
+<title>Submissions</title>
 {% load static %}
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link href="{% static "css/default.css" %}" rel="stylesheet" type="text/css" />
@@ -127,9 +127,9 @@
 
 <div id="menu">
   <ul>
-    <li class="active"><a href="/">Home</a></li>
+    <li><a href="/">Home</a></li>
     <li><a href="{%url 'leaderboard'%}">Leaderboard</a></li>
-    <li><a href="{%url 'submissions'%}">Submissions</a></li>
+    <li class="active"><a href="{%url 'submissions'%}">Submissions</a></li>
     <li><a href="{%url 'level1'%}">Challenges</a></li>
     <li><a href="https://www.instagram.com/codingclubrvce">Coding Club</a></li>
     <li><a href="http://8thmile.rvce.edu.in">8th mile</a></li>
@@ -174,11 +174,11 @@
           {% if submission.validity %}
             
             <td class="user" style="border-left: 4px solid green;">
-              {{submission.userID}}<span>{{submission.SubmissionId }}</span> </td>
+              {{submission.userID.username}}<span>({{submission.SubmissionId }})</span> </td>
           {% endif%}
           {% if not submission.validity %}
             <td class="user" style="border-left: 4px solid red;"> 
-              {{submission.userID}}<span>{{submission.SubmissionId }}</span>
+              {{submission.userID.username}}<span>({{submission.SubmissionId }})</span>
             </td>
           {% endif%}
           <td class="score"><span>{{submission.level}}</span></td>

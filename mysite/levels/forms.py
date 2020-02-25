@@ -11,4 +11,4 @@ class submissionForm(forms.Form):
     
     username = forms.CharField(label='USERNAME ', max_length=50)
     key = forms.CharField(label='KEY ', max_length=50)
-    level = forms.IntegerField(label='LEVEL')
+    level = forms.IntegerField(label='LEVEL', max_value=15, min_value = 1)
